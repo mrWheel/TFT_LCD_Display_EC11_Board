@@ -7811,7 +7811,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "0a2b4ca4-7e44-4218-92af-63c8b8f5fd1c")
-		(property "Reference" "#PWR06"
+		(property "Reference" "#PWR05"
 			(at 105.41 69.85 0)
 			(hide yes)
 			(show_name no)
@@ -7871,7 +7871,7 @@
 		(instances
 			(project "TFT_LCD_Display_EC11_Board"
 				(path "/3c59e70f-e9c5-4ef4-a932-269e9554ea5b"
-					(reference "#PWR06")
+					(reference "#PWR05")
 					(unit 1)
 				)
 			)
@@ -8239,7 +8239,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "12edd5e1-f768-4436-bab1-63eee967416e")
-		(property "Reference" "#PWR014"
+		(property "Reference" "#PWR02"
 			(at 44.45 115.57 0)
 			(hide yes)
 			(show_name no)
@@ -8299,7 +8299,7 @@
 		(instances
 			(project "TFT_LCD_Display_EC11_Board"
 				(path "/3c59e70f-e9c5-4ef4-a932-269e9554ea5b"
-					(reference "#PWR014")
+					(reference "#PWR02")
 					(unit 1)
 				)
 			)
@@ -8316,7 +8316,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "15aa6e96-8c8e-463f-8f2d-8b722f012fc6")
-		(property "Reference" "R8"
+		(property "Reference" "R2"
 			(at 64.516 78.74 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8380,7 +8380,7 @@
 		(instances
 			(project "TFT_LCD_Display_EC11_Board"
 				(path "/3c59e70f-e9c5-4ef4-a932-269e9554ea5b"
-					(reference "R8")
+					(reference "R2")
 					(unit 1)
 				)
 			)
@@ -8398,7 +8398,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "1fc11117-18fc-4ea8-ab04-e6368d84b004")
-		(property "Reference" "#PWR09"
+		(property "Reference" "#PWR07"
 			(at 151.13 184.15 0)
 			(hide yes)
 			(show_name no)
@@ -8458,7 +8458,7 @@
 		(instances
 			(project "TFT_LCD_Display_EC11_Board"
 				(path "/3c59e70f-e9c5-4ef4-a932-269e9554ea5b"
-					(reference "#PWR09")
+					(reference "#PWR07")
 					(unit 1)
 				)
 			)
@@ -8664,7 +8664,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "3b0d724b-2a90-4af6-bafb-60fd72239a82")
-		(property "Reference" "TP4"
+		(property "Reference" "TP3"
 			(at 73.787 19.6158 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8725,7 +8725,7 @@
 		(instances
 			(project "TFT_LCD_Display_EC11_Board"
 				(path "/3c59e70f-e9c5-4ef4-a932-269e9554ea5b"
-					(reference "TP4")
+					(reference "TP3")
 					(unit 1)
 				)
 			)
@@ -8933,7 +8933,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "52b36485-ea93-49eb-9be0-7d5e8aea081a")
-		(property "Reference" "#PWR013"
+		(property "Reference" "#PWR04"
 			(at 72.39 83.82 0)
 			(hide yes)
 			(show_name no)
@@ -8993,7 +8993,7 @@
 		(instances
 			(project "TFT_LCD_Display_EC11_Board"
 				(path "/3c59e70f-e9c5-4ef4-a932-269e9554ea5b"
-					(reference "#PWR013")
+					(reference "#PWR04")
 					(unit 1)
 				)
 			)
@@ -9249,7 +9249,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "631518b7-5e5a-442c-9189-edde5bfeb425")
-		(property "Reference" "R7"
+		(property "Reference" "R1"
 			(at 64.516 76.2 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9313,7 +9313,7 @@
 		(instances
 			(project "TFT_LCD_Display_EC11_Board"
 				(path "/3c59e70f-e9c5-4ef4-a932-269e9554ea5b"
-					(reference "R7")
+					(reference "R1")
 					(unit 1)
 				)
 			)
@@ -9491,7 +9491,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "7bac33b0-e42b-48ee-967d-9a2c38e5c3d2")
-		(property "Reference" "#PWR011"
+		(property "Reference" "#PWR09"
 			(at 251.46 120.65 0)
 			(hide yes)
 			(show_name no)
@@ -9551,7 +9551,7 @@
 		(instances
 			(project "TFT_LCD_Display_EC11_Board"
 				(path "/3c59e70f-e9c5-4ef4-a932-269e9554ea5b"
-					(reference "#PWR011")
+					(reference "#PWR09")
 					(unit 1)
 				)
 			)
@@ -9651,7 +9651,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "92443ea8-c0a0-4855-b069-67443f655e5d")
-		(property "Reference" "#PWR07"
+		(property "Reference" "#PWR06"
 			(at 137.16 97.79 0)
 			(hide yes)
 			(show_name no)
@@ -9711,7 +9711,7 @@
 		(instances
 			(project "TFT_LCD_Display_EC11_Board"
 				(path "/3c59e70f-e9c5-4ef4-a932-269e9554ea5b"
-					(reference "#PWR07")
+					(reference "#PWR06")
 					(unit 1)
 				)
 			)
@@ -9812,7 +9812,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "9f7a5261-b542-48b6-a459-989d2c902045")
-		(property "Reference" "TP5"
+		(property "Reference" "TP4"
 			(at 189.23 38.608 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9873,7 +9873,7 @@
 		(instances
 			(project "TFT_LCD_Display_EC11_Board"
 				(path "/3c59e70f-e9c5-4ef4-a932-269e9554ea5b"
-					(reference "TP5")
+					(reference "TP4")
 					(unit 1)
 				)
 			)
@@ -10275,7 +10275,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "a8eeb7e8-43f0-499d-8a1b-7a0556b8b751")
-		(property "Reference" "J5"
+		(property "Reference" "J1"
 			(at 44.45 64.4355 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10382,7 +10382,7 @@
 		(instances
 			(project "TFT_LCD_Display_EC11_Board"
 				(path "/3c59e70f-e9c5-4ef4-a932-269e9554ea5b"
-					(reference "J5")
+					(reference "J1")
 					(unit 1)
 				)
 			)
@@ -10728,7 +10728,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "d0ba0e7f-ff49-42a3-93f4-670224ada593")
-		(property "Reference" "#PWR015"
+		(property "Reference" "#PWR01"
 			(at 36.83 115.57 0)
 			(hide yes)
 			(show_name no)
@@ -10788,7 +10788,7 @@
 		(instances
 			(project "TFT_LCD_Display_EC11_Board"
 				(path "/3c59e70f-e9c5-4ef4-a932-269e9554ea5b"
-					(reference "#PWR015")
+					(reference "#PWR01")
 					(unit 1)
 				)
 			)
@@ -10977,7 +10977,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "dd4fce59-6961-421d-863a-8efdab218c7f")
-		(property "Reference" "TP6"
+		(property "Reference" "TP5"
 			(at 189.992 68.072 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11038,7 +11038,7 @@
 		(instances
 			(project "TFT_LCD_Display_EC11_Board"
 				(path "/3c59e70f-e9c5-4ef4-a932-269e9554ea5b"
-					(reference "TP6")
+					(reference "TP5")
 					(unit 1)
 				)
 			)
@@ -11152,7 +11152,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "ee015877-a1f2-490c-bc1b-96f6fa5a7503")
-		(property "Reference" "#PWR010"
+		(property "Reference" "#PWR08"
 			(at 241.3 101.6 0)
 			(hide yes)
 			(show_name no)
@@ -11212,7 +11212,7 @@
 		(instances
 			(project "TFT_LCD_Display_EC11_Board"
 				(path "/3c59e70f-e9c5-4ef4-a932-269e9554ea5b"
-					(reference "#PWR010")
+					(reference "#PWR08")
 					(unit 1)
 				)
 			)
