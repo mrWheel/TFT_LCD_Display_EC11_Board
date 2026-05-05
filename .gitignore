@@ -2,3 +2,4 @@
 *.lck
 .history/
 _restore_backup/
+.DS_STORE
