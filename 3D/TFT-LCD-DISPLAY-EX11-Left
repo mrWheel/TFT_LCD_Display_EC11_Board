@@ -1,9 +1,9 @@
 //-----------------------------------------------------------------------
 // Yet Another Parameterized Projectbox generator
 //
-//  This is a box for TFT-LCD-DISPLAY-EC11
+//  This is a box for TFT-LCD-DISPLAY-EC11-left
 //
-//  Version 1.0.0 (05-05-2026)
+//  Version 1.0.0 (23-04-2026)
 //
 // This design is parameterized based on the size of a PCB.
 //
@@ -47,7 +47,7 @@ include <./YAPPgenerator_v3.scad>
 
 
 //-- which part(s) do you want to print?
-printBaseShell        = false;
+printBaseShell        = true;
 printLidShell         = true;
 printSwitchExtenders  = false;
 printDisplayClips     = false;
@@ -58,9 +58,9 @@ printDisplayClips     = false;
 //Defined here so you can define the "Main" PCB using these if wanted
 pcbLength           = 91; // front to back (X axis)
 pcbWidth            = 44; // side to side (Y axis)
-pcbThickness        = 7.25; 
-standoffHeight      = 14; //-- How much the PCB needs to be raised from the base to leave room for solderings and whatnot
-standoffDiameter    = 6;
+pcbThickness        = 6; 
+standoffHeight      = 0.0; //-- How much the PCB needs to be raised from the base to leave room for solderings and whatnot
+standoffDiameter    = 7;
 standoffPinDiameter = 2.4;
 standoffHoleSlack   = 0.4;
 
@@ -98,12 +98,12 @@ standoffHoleSlack   = 0.4;
 pcb = 
 [
   // Default Main PCB - DO NOT REMOVE the "Main" line.
-  ["Main", pcbLength, pcbWidth, 0, 0, pcbThickness,  standoffHeight, standoffDiameter, standoffPinDiameter, standoffHoleSlack]
+  ["Main",              pcbLength,pcbWidth,    0,0,    pcbThickness,  standoffHeight, standoffDiameter, standoffPinDiameter, standoffHoleSlack]
 ];
 
 //-------------------------------------------------------------------                            
 //-- padding between pcb and inside wall
-paddingFront        =  0.25;
+paddingFront        =  5;
 paddingBack         = 25;
 paddingRight        =  5;
 paddingLeft         =  5;
@@ -119,8 +119,8 @@ lidPlaneThickness   = 1.5;
 //                       + basePlaneThickness
 //-- space between pcb and lidPlane :=
 //--      (bottonWallHeight+lidWallHeight) - (standoffHeight+pcbThickness)
-baseWallHeight      = 10;
-lidWallHeight       = 15;
+baseWallHeight      =  6;
+lidWallHeight       = 24;
 
 //-- ridge where base and lid off box can overlap
 //-- Make sure this isn't less than lidWallHeight
@@ -152,7 +152,7 @@ renderQuality             = 8;          //-> from 1 to 32, Default = 8
 // --Preview --
 previewQuality            = 5;          //-> from 1 to 32, Default = 5
 showSideBySide            = false;       //-> Default = true
-onLidGap                  = 0;  // tip don't override to animate the lid opening
+onLidGap                  = 8;  // tip don't override to animate the lid opening
 colorLid                  = "YellowGreen";   
 alphaLid                  = 1;
 colorBase                 = "BurlyWood";
@@ -160,7 +160,7 @@ alphaBase                 = 1;
 hideLidWalls              = false;      //-> Remove the walls from the lid : only if preview and showSideBySide=true 
 hideBaseWalls             = false;      //-> Remove the walls from the base : only if preview and showSideBySide=true  
 showOrientation           = true;       //-> Show the Front/Back/Left/Right labels : only in preview
-showPCB                   = true;      //-> Show the PCB in red : only in preview 
+showPCB                   = false;      //-> Show the PCB in red : only in preview 
 showSwitches              = false;      //-> Show the switches (for pushbuttons) : only in preview 
 showButtonsDepressed      = false;      //-> Should the buttons in the Lid On view be in the pressed position
 showOriginCoordBox        = false;      //-> Shows red bars representing the origin for yappCoordBox : only in preview 
@@ -241,7 +241,8 @@ inspectZfromBottom        = true;       //-> View from the inspection cut up
 //             if the opposing stand if deleted see sample in Demo_Connectors
 //-------------------------------------------------------------------
 pcbStands = 
-[//  [3, 3.2, standoffHeight, -1, standoffDiameter+1, standoffPinDiameter, standoffHoleSlack, 0, 0, yappBaseOnly, yappHole, yappAllCorners]
+[
+  //  [3, 3, standoffHeight, -1, standoffDiameter, standoffPinDiameter, standoffHoleSlack, 0, 0, yappBoth, yappPin, yappAllCorners]
 ];
 
 
@@ -274,15 +275,20 @@ pcbStands =
 //    n(h) = { yappNoInternalFillet } : Don't add internal fillets (external fillets can still be added)
 
 //-------------------------------------------------------------------
-connectors   = 
-[//- 0, 1,     2, 3, 4, 5,       6,      7, 8
-    [3, 3.2, -17, 3, 7, 3.5+0.4, 6+0.4, 20, 7
+connectors   =
+[
+    [3, 3.2, standoffHeight, 3.5, 7, 3.5+0.4, 7+0.4, -1, -1
           , yappBoth, yappHole, yappAllCorners
-          , yappCoordPCB
-          , yappCountersink
-          , [yappPCBName, "Main"]
+          , yappCountersink, [yappPCBName, "Main"]
           , yappThroughLid]
+/********************************
+    [3, 3, standoffHeight, 3.5, 7, 3.5+0.4, 7+0.4, -1, -1
+          , yappBoth, yappHole, yappAllCorners
+          , yappCountersink, [yappPCBName, "Main"]
+          , yappThroughLid]
+********************************/
 ];
+
 
 //===================================================================
 //  *** Cutouts ***
@@ -344,27 +350,28 @@ cutoutsBase =
 
 cutoutsLid  = 
 [
-  [(pcbLength/2)-11, (pcbWidth/2), 52, 40, 1, yappRoundedRect, yappCenter]  // Display
-// ,[78, pcbWidth-13, 13, 13, 4, yappCircle, yappCenter]    // Rotary Encoder
- ,[78, pcbWidth-13, 12.5, 12.5, 1, yappRoundedRect, yappCenter]    // Rotary Encoder
+  [(pcbLength/2)-11, (pcbWidth/2), 52, 40, 1, yappRoundedRect, yappCenter]
+ ,[78, pcbWidth-13, 13, 13, 4, yappCircle, yappCenter]    // Rotary Encoder
  ,[78, pcbWidth-31, 13, 13, 3.5, yappCircle, yappCenter]  // Key0
+/*
+  [(pcbLength/2)-11, (pcbWidth/2), 52, 40, 1, yappRoundedRect, yappCenter]
+ ,[71, pcbWidth-7, 13, 13, 4, yappCircle, yappCenter]  // Rotary Encoder
+ ,[71, pcbWidth-31, 13, 13, 3.5, yappCircle, yappCenter]  // Key0
+*/
 ];
 
 cutoutsFront =  
 [
-    [pcbWidth/2, -12, 10, 1, 1.5, yappRoundedRect, yappCenter]  // USB-C Cutout
 ];
 
 
 cutoutsBack = 
-[
-
+[//--         0,  1, 2,  3,  4, 5
+    [pcbWidth/2, 10, 0, 11.3, 6.2, yappCircleWithFlats, yappCenter]
 ];
 
 cutoutsLeft =   
-[//--  0,  1, 2,  3,   4,   5
-    [-11, -5, 0, 11.0, 6.0, yappCircleWithFlats, yappCenter]  // DIN connector
-
+[
 ];
 
 cutoutsRight =  
@@ -390,8 +397,7 @@ cutoutsRight =
 //-------------------------------------------------------------------
 snapJoins   =   
 [
-    [15, 5, yappBack,yappSymmetric]
-   ,[12, 5, yappFront, yappSymmetric]
+    [15, 5, yappBack, yappFront, yappSymmetric]
    ,[30, 5, yappLeft, yappRight, yappSymmetric]
 ];
 
@@ -596,15 +602,17 @@ displayMounts =
 // origin = box(0,0,0)
 module hookLidInside()
 {
-  translate([paddingBack+34.5, 27, -0.4])
+//[(pcbLength/2)-11, (pcbWidth/2), 52, 40, 1, yappRoundedRect, yappCenter]
+//**  translate([39.5, 27, -2.4])
+  translate([paddingBack+34.5, 27, -2.4])
   {
     color("red")difference()
     {
-      cube([56.2,44.1,1], center=true);
+      cube([56.2,44.2,5], center=true);
       cube([52,40,6], center=true);
     }
   }
-
+  
 } // hookLidInside()
   
 
