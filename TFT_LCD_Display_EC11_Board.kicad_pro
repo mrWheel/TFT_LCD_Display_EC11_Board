@@ -224,7 +224,7 @@
       "internal_id": "",
       "mfg": "",
       "mpn": "",
-      "sch_revision": "r0.2.1"
+      "sch_revision": "r2.0"
     },
     "layer_pairs": [],
     "layer_presets": [],
@@ -517,7 +517,7 @@
   "schematic": {
     "annotate_start_num": 0,
     "annotation": {
-      "method": 1,
+      "method": 0,
       "sort_order": 0
     },
     "bom_export_filename": "${PROJECTNAME}.csv",
@@ -632,7 +632,7 @@
         "uuid": "3c59e70f-e9c5-4ef4-a932-269e9554ea5b"
       }
     ],
-    "used_designators": "R7(!)1-2,C4(!)1,#PWR10,C4,R7",
+    "used_designators": "",
     "variants": []
   },
   "sheets": [
